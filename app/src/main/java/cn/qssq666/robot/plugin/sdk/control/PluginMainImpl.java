@@ -2,7 +2,6 @@ package cn.qssq666.robot.plugin.sdk.control;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -113,7 +112,7 @@ public class PluginMainImpl implements PluginInterface {
 
     @Override
     public boolean onReceiveMsgIsNeedIntercept(MsgItem item) {
-        Log.w(TAG, "收到了消息：" + item.getSenderuin() + "");
+        System.out.println(TAG+ "收到了消息：" + item.getSenderuin() + "");
         return false;
     }
 }
