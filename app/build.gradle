@@ -21,7 +21,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
-    compileOnly 'cn.qssq666:robot_sdk:0.6'//sdk内容不建议打包进去，否则插件->插件就出问题了
+    compileOnly 'cn.qssq666:robot_sdk:0.6'//sdk内容不建议打包进去，否则插件->c
 //    implementation 'cn.qssq666:robot_sdk:0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
