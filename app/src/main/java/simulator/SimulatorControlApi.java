@@ -1,6 +1,6 @@
 package simulator;
 
-import cn.qssq666.robot.bean.MsgItem;
+import cn.qssq666.robot.plugin.sdk.interfaces.IMsgModel;
 import cn.qssq666.robot.plugin.sdk.interfaces.PluginControlInterface;
 
 /**
@@ -8,12 +8,12 @@ import cn.qssq666.robot.plugin.sdk.interfaces.PluginControlInterface;
  */
 public class SimulatorControlApi  implements PluginControlInterface{
     @Override
-    public void sendGroupMsg(MsgItem item) {
+    public void sendGroupMsg(IMsgModel item) {
         System.out.println(String.format("%s发送 %s消息给%s:%s ",item.getSelfuin(),"群",item.getFrienduin(),item.getMessage()));
     }
 
     @Override
-    public void sendQQMsg(MsgItem item) {
+    public void sendQQMsg(IMsgModel item) {
         System.out.println(String.format("%s发送 %s消息给%s:%s ",item.getSelfuin(),"qq",item.getFrienduin(),item.getMessage()));
     }
 
@@ -39,52 +39,52 @@ public class SimulatorControlApi  implements PluginControlInterface{
     }
 
     @Override
-    public void sendMsg(MsgItem item) {
+    public void sendMsg(IMsgModel item) {
         System.out.println(String.format("%s发送 %s消息给%s:%s ",item.getSelfuin(),"万能消息[istoop:"+item.getIstroop()+"|type:"+item.getType()+"]",item.getFrienduin(),item.getMessage()));
     }
 
     @Override
-    public void sendGagMsg(MsgItem item, long gagduration) {
+    public void sendGagMsg(IMsgModel item, long gagduration) {
         System.out.println(String.format("%s发送 %s消息给%s:%s 禁言时间%d ",item.getSelfuin(),"禁言",item.getFrienduin(),item.getMessage(),gagduration));
     }
 
     @Override
-    public void sendGagMsg(MsgItem item, String group, String qq, long gagduration) {
+    public void sendGagMsg(IMsgModel item, String group, String qq, long gagduration) {
 
     }
 
     @Override
-    public void sendAtMsg(MsgItem item, String group, String qq) {
+    public void sendAtMsg(IMsgModel item, String group, String qq) {
 
     }
 
     @Override
-    public void sendKickMsg(MsgItem item, boolean forverKick) {
+    public void sendKickMsg(IMsgModel item, boolean forverKick) {
 
     }
 
     @Override
-    public void sendMsgCardMsg(MsgItem item, String group, String qq, String xmlMsg) {
+    public void sendMsgCardMsg(IMsgModel item, String group, String qq, String xmlMsg) {
 
     }
 
     @Override
-    public void sendKickMsg(MsgItem item, String group, String qq, boolean forverKick) {
+    public void sendKickMsg(IMsgModel item, String group, String qq, boolean forverKick) {
 
     }
 
     @Override
-    public boolean isGroupMsg(MsgItem item) {
+    public boolean isGroupMsg(IMsgModel item) {
         return item.getIstroop()==1;
     }
 
     @Override
-    public boolean isPrivateMsg(MsgItem item) {
+    public boolean isPrivateMsg(IMsgModel item) {
         return item.getIstroop()==0;
     }
 
     @Override
-    public boolean isPicMsg(MsgItem item) {
+    public boolean isPicMsg(IMsgModel item) {
         return false;
     }
 }

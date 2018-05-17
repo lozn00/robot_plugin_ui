@@ -2,7 +2,6 @@ package simulator;
 
 import java.util.Date;
 
-import cn.qssq666.robot.bean.MsgItem;
 import cn.qssq666.robot.plugin.sdk.control.PluginMainImpl;
 
 /**
@@ -31,10 +30,10 @@ public class SimulatorMain {
         pluginMain.onDestory();
     }
 
-    public static MsgItem buildGroupMsgItem(String group,String qq,String message){
+    public static SimulatorMsgItemX buildGroupMsgItem(String group,String qq,String message){
 
 
-        MsgItem msgItem=new MsgItem();
+        SimulatorMsgItemX msgItem=new SimulatorMsgItemX();
         msgItem.setFrienduin(group);
         msgItem.setSenderuin(qq);//qq
         msgItem.setSelfuin("35068264");
@@ -44,9 +43,9 @@ public class SimulatorMain {
         msgItem.setMessage(message);
         return  msgItem;
     }
-    public static MsgItem buildPrivateItem(String qq,String message){
+    public static SimulatorMsgItemX buildPrivateItem(String qq,String message){
 
-        MsgItem msgItem=new MsgItem();
+        SimulatorMsgItemX msgItem=new SimulatorMsgItemX();
         msgItem.setTime(new Date().getTime());
         msgItem.setSenderuin(qq);//qq
         msgItem.setFrienduin(qq);

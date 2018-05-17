@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cn.qssq666.robot.bean.MsgItem;
+import cn.qssq666.robot.plugin.sdk.interfaces.IMsgModel;
 import cn.qssq666.robot.plugin.sdk.interfaces.PluginControlInterface;
 import cn.qssq666.robot.plugin.sdk.interfaces.PluginInterface;
 import cn.qssq666.robot.plugin.sdk.interfaces.RobotConfigInterface;
 
 /**
+ *
+ * cn.qssq666.robot.plugin.sdk.control.PluginMainImpl
  * Created by qssq on 2018/5/17 qssq666@foxmail.com
  * 这是固定入口，是不能修改的
  */
@@ -23,9 +25,12 @@ public class PluginMainImpl implements PluginInterface {
     private Context context;
 
     @Override
+
     public String getAuthorName() {
         return "情随事迁";
     }
+
+
 
 
     @Override
@@ -82,7 +87,7 @@ public class PluginMainImpl implements PluginInterface {
 
 
     @Override
-    public boolean onReceiveOtherIntercept(MsgItem item, int type) {
+    public boolean onReceiveOtherIntercept(IMsgModel item, int type) {
         return false;
     }
 
@@ -111,7 +116,7 @@ public class PluginMainImpl implements PluginInterface {
     }
 
     @Override
-    public boolean onReceiveMsgIsNeedIntercept(MsgItem item) {
+    public boolean onReceiveMsgIsNeedIntercept(IMsgModel item) {
         System.out.println(TAG+ "收到了消息：" + item.getSenderuin() + "");
         return false;
     }
