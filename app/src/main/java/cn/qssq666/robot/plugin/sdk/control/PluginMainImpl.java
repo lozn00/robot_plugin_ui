@@ -23,6 +23,7 @@ public class PluginMainImpl implements PluginInterface {
     private boolean disable;
     private PluginControlInterface mControlApi;
     private Context context;
+    private String mLastMsg;
 
     @Override
 
@@ -88,6 +89,7 @@ public class PluginMainImpl implements PluginInterface {
 
     @Override
     public boolean onReceiveOtherIntercept(IMsgModel item, int type) {
+        mLastMsg=item.getMessage()+" from qq:"+item.getSenderuin();
         return false;
     }
 
@@ -111,7 +113,7 @@ public class PluginMainImpl implements PluginInterface {
     public View onConfigUi(ViewGroup viewGroup) {
         TextView textView = new TextView(viewGroup.getContext());
         textView.setTextColor(Color.RED);
-        textView.setText("这是一个demo,本demo以后会陆续完善的。 完善具有修改机器人配置的能力。");
+        textView.setText("这是一个demo,本demo以后会陆续完善的。 完善具有修改机器人配置的能力。\n最后收到的消息是："+mLastMsg);
         return textView;
     }
 
