@@ -51,7 +51,7 @@ public class PluginMainImpl implements PluginInterface {
 
     @Override
     public String getPackageName() {
-        return "cn.qssq666.plugindmo";//这个包名必须用自己的域名，否则后期开发的时候检测非法冒充官方域名，我将直接不加载机器人，没有的话随便天蝎
+        return "cn.qssq666.plugindemo";//这个包名必须用自己的域名，否则后期开发的时候检测非法冒充官方域名，我将直接不加载机器人，没有的话随便天蝎
     }
 
     @Override
@@ -120,6 +120,7 @@ public class PluginMainImpl implements PluginInterface {
     @Override
     public boolean onReceiveMsgIsNeedIntercept(IMsgModel item) {
         System.out.println(TAG+ "收到了消息：" + item.getSenderuin() + "");
+        mLastMsg=item.getMessage()+" from qq:"+item.getSenderuin();
         return false;
     }
 }

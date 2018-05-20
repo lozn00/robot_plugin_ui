@@ -26,3 +26,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+// adb push app/release/app-release.apk /sdcard/qssq666/robot_plugin/cn.qssq666.plugin
